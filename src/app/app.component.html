@@ -1,2 +1,8 @@
-<app-cards-list></app-cards-list>
-<app-card-form></app-card-form>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-card-form (card)="createCard($event)"></app-card-form>
+      <app-cards-list [cards]="cards"></app-cards-list>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ICard} from '../models/cards';
 
 @Component({
   selector: 'app-cards-list',
   templateUrl: './cards-list.component.html',
   styleUrls: ['./cards-list.component.scss']
 })
-export class CardsListComponent implements OnInit {
+export class CardsListComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() cards: ICard[];
 
 }
