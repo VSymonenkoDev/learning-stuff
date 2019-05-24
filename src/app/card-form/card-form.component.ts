@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {ICard} from '../models/cards';
 
 @Component({
   selector: 'app-card-form',
   templateUrl: './card-form.component.html',
   styleUrls: ['./card-form.component.scss']
 })
-export class CardFormComponent implements OnInit {
+export class CardFormComponent {
 
-  constructor() { }
+  cardData: ICard = {question: '', answer: ''};
 
-  ngOnInit() {
+  @Output() card: EventEmitter<ICard> = new EventEmitter();
+
+  setFormData() {
+    this.card.emit(this.cardData);
+    this.cardData = {question: '', answer: ''};
   }
-
 }
+
+

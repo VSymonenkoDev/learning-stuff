@@ -1,0 +1,20 @@
+<div *ngFor="let card of cards">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        {{card.question}}
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item>Settings</button>
+          <button mat-menu-item>Help</button>
+        </mat-menu>
+
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-expansion-panel-header>
+      {{card.answer}}
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+

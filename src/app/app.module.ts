@@ -8,7 +8,11 @@ import {CardsListComponent} from './cards-list/cards-list.component';
 import {CardFormComponent} from './card-form/card-form.component';
 import {MatFormFieldModule, MatIconModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     MatInputModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatExpansionModule,
+    MatMenuModule,
+    FormsModule
   ],
   providers: [
     CardsService

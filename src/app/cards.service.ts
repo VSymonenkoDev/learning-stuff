@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {ICard} from './models/cards';
 
 @Injectable()
 export class CardsService {
@@ -10,11 +11,15 @@ export class CardsService {
 
   getCards(): Observable<any> {
     return this.http.get('/api/cards')
-      .pipe(map(res => res));
+      .pipe(map(res => {
+        console.log(res);
+        return res;
+      }));
   }
 
-  createCard(): Observable<any> {
-    return this.http.post('/api/card', {question: 'test', answer: 'test'})
+  createCard(card: ICard): Observable<any> {
+    console.log(card);
+    return this.http.post('/api/card', card)
       .pipe(map(res => res));
   }
 
