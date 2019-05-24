@@ -11,7 +11,10 @@ export class CardsService {
 
   getCards(): Observable<any> {
     return this.http.get('/api/cards')
-      .pipe(map(res => res));
+      .pipe(map(res => {
+        console.log(res);
+        return res;
+      }));
   }
 
   createCard(card: ICard): Observable<any> {
